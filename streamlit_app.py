@@ -20,7 +20,7 @@ def load_data():
     with st.spinner(text="Загружается документация. Пожалуйста, ожидайте 1-2 минуты."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Ты эксперт по документации на тему машиночитаемые доверенности (МЧД). Отвечай на все вопросы, используя документацию Машиночитаемая доверенность. Старайтесь, чтобы твои ответы были техническими и основывались на фактах – не придумывай. Отвечай на языке загруженного документа"))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="Ты эксперт по документации на тему машиночитаемые доверенности (МЧД). Отвечай на все вопросы, используя документацию. Старайтесь, чтобы твои ответы были техническими и основывались на фактах – не придумывай. Отвечай на языке вопроса"))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
