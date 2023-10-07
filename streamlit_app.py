@@ -8,8 +8,9 @@ st.set_page_config(page_title="Chat with the Streamlit docs, powered by LlamaInd
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 st.title("Чат с виртуальным помощником Такскома ")
 st.info("Если вы хотите связаться с нами по телефону, то позвоните по бесплатному номеру:", icon="📃")
-st.info("8 (800) 250 73 45 
-Сайт компании: https://taxcom.ru/", icon="📃")
+st.info("Звонок по России (беспалтный): 8 (800) 250 73 45") 
+st.info("Москва и МО: 8 (495) 730-73-45") 
+st.info("Сайт компании: https://taxcom.ru/", icon="📃")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
